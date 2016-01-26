@@ -1,0 +1,19 @@
+---
+# Beetbox settings.
+beet_domain: "wf-agov.local"
+beet_base: "/var/beetbox"
+beet_root: "{{ beet_base }}/docroot"
+beet_web: "{{ beet_root }}"
+beet_site_name: "aGov - Wysiwyg Fields edition"
+
+# Drupal settings.
+drupal_build_makefile: yes
+drupal_makefile_path: "{{ beet_base }}/wf-agov.make.yml"
+drupal_install_site: yes
+drupal_install_profile: agov
+drupal_account_name: admin
+drupal_account_pass: admin
+
+# Apache config.
+apache_vhosts:
+  - {servername: "{{ beet_domain }}", documentroot: "{{ beet_web }}"}
